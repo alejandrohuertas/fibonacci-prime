@@ -8,11 +8,14 @@ public class FibonacciGenerator {
     private boolean second;
     
     public FibonacciGenerator(Integer top){
-	limit = top;
-	fibo = fiboPrev = 1;
-	first = true;
-	second = true;
-	
+    	limit = top;
+    	fibo = fiboPrev = 1;
+    	first = true;
+    	second = true;
+    }
+    
+    public FibonacciGenerator(){
+    	this(null);
     }
 
     public Integer getLimit() {
@@ -40,14 +43,14 @@ public class FibonacciGenerator {
 		
     }
     
-    public static void main (String []args){
-	
-	FibonacciGenerator fg = new FibonacciGenerator(100000);
-	Integer result =fg.generate();
-	
-	while (result < fg.getLimit()){
-	    System.out.println("va "+ result);
-	    result = fg.generate();
-	}
-    }
+//    public static void main (String []args){
+//	
+//	FibonacciGenerator fg = new FibonacciGenerator(100000);
+//	Integer result =fg.generate();
+//	
+//		while (result < fg.getLimit()){
+//		    System.out.println("va "+ result);
+//		    result = fg.generate();
+//		}
+//    }
 }
