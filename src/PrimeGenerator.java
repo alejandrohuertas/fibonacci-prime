@@ -3,9 +3,7 @@ public class PrimeGenerator {
 
     private Integer limit;
     private Integer start;
-    private Integer fiboPrev;
     private boolean first;
-    private boolean second;
     
     public PrimeGenerator(Integer top){
 	limit = top;
