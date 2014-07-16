@@ -4,6 +4,7 @@ public class PrimeGenerator {
     private Integer limit;
     private Integer start;
     private boolean first;
+    static Integer prime;
     
     public PrimeGenerator(Integer top){
 	limit = top;
@@ -19,8 +20,8 @@ public class PrimeGenerator {
 	this.limit = limit;
     }
     
-    public Integer generate(){
-	Integer prime= start;
+    synchronized public Integer generate(){
+	prime= start;
 	if (first){
 	    first = false;
 	    start++;

@@ -2,7 +2,7 @@
 public class FibonacciGenerator {
 
     private Integer limit;
-    private Integer fibo;
+    static private Integer fibo;
     private Integer fiboPrev;
     private boolean first;
     private boolean second;
@@ -23,7 +23,7 @@ public class FibonacciGenerator {
 	this.limit = limit;
     }
     
-    public Integer generate(){
+    synchronized public Integer generate(){
 	if (first){
 	    first = false;
 	    return  fibo;
