@@ -26,7 +26,7 @@ public class FibonacciGenerator {
 	this.limit = limit;
     }
     
-    synchronized public Integer generate(){
+    public Integer generate(){
 	if (first){
 	    first = false;
 	    return  fibo;

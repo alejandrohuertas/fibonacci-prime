@@ -24,7 +24,7 @@ public class PrimeGenerator {
 	this.limit = limit;
     }
     
-    synchronized public Integer generate(){
+    public Integer generate(){
 		prime= start;
 		if (first){
 		    first = false;
