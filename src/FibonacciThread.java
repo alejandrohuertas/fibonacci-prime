@@ -1,5 +1,7 @@
+import java.util.concurrent.Callable;
 
-public class FibonacciThread implements Runnable{
+
+public class FibonacciThread implements Callable<Integer>{
 
 	FibonacciGenerator fbg;
 	
@@ -9,10 +11,11 @@ public class FibonacciThread implements Runnable{
 		this.fbg = fbg;
 	}
 	
-	public void run(){
+	public Integer call(){
 		result = fbg.generate();
 		
-		System.out.println("i am from 1st thread Fibonacci :"+result);
+		//System.out.println("i am from 1st thread Fibonacci :"+result);
+		return result;
 	}
 
 	public Integer getResult() {
