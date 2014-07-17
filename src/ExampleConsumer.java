@@ -1,8 +1,9 @@
 import java.util.Queue;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 
-public class ExampleConsumer implements Runnable {
+public class ExampleConsumer implements Callable<Integer> {
 
     
     Queue<Integer> queueFibo;
@@ -13,17 +14,22 @@ public class ExampleConsumer implements Runnable {
        this.queuePrime = queuePrime;
     }
     @Override
-    public void run() {
-        System.out.println("ExampleConsumer iniciado");
-        Integer prime, fibo;
-        while (( prime =queuePrime.poll())!=null ){
-            System.out.println("extrae de primos "+ prime);
+    public Integer call() {
+        System.out.println("Consumer iniciado");
+        Integer prime;
+        prime = queuePrime.poll();
+        while ( prime !=null ){
+//            System.out.println("extrae de primos "+ prime);
+            prime = queuePrime.poll();
+            if (queueFibo.contains(prime)){
+                System.out.println("Este personaje se encuentra en las dos sequencias --> "+prime);
+            }
         }
-        while (( fibo =queueFibo.poll())!=null ){
-            System.out.println("extrae de fibonacci "+fibo);
-        }
-//        TODO: analisis de si son estan el los dos imprimir
-        System.out.println("Aca va el analisis de si estan en las dos colas");
+//        while (( fibo =queueFibo.poll())!=null ){
+//            System.out.println("extrae de fibonacci "+fibo);
+//        }
+        System.out.println("Consumer finalizado");
+        return null;
     }
 
 }
