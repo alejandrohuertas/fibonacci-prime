@@ -15,7 +15,7 @@ public class Main {
         PrimeProducer primeProducer = new PrimeProducer(new PrimeGenerator(),queuePrime,limit);
         FibonacciProducer fiboProducer = new FibonacciProducer(new FibonacciGenerator(),queueFibo,limit);
         
-        ExampleConsumer consumer = new ExampleConsumer(queueFibo, queuePrime);
+        Consumer consumer = new Consumer(queueFibo, queuePrime);
         
         ExecutorService exService = Executors.newFixedThreadPool(2);
         exService.submit(primeProducer);

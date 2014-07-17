@@ -3,13 +3,13 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 
-public class ExampleConsumer implements Callable<Integer> {
+public class Consumer implements Callable<Integer> {
 
     
     Queue<Integer> queueFibo;
     Queue<Integer> queuePrime;
     
-    ExampleConsumer(ConcurrentLinkedQueue<Integer> queueFibo,ConcurrentLinkedQueue<Integer> queuePrime ){
+    Consumer(ConcurrentLinkedQueue<Integer> queueFibo,ConcurrentLinkedQueue<Integer> queuePrime ){
        this.queueFibo = queueFibo;
        this.queuePrime = queuePrime;
     }
