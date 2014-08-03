@@ -3,7 +3,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class PrimeProducer implements Callable<Integer> {
-    // implements Runnable{
 
     PrimeGenerator pg;
     Integer result = 0;
@@ -15,16 +14,9 @@ public class PrimeProducer implements Callable<Integer> {
         this.queue = queue;
         this.limit = limit;
     }
-
+    @Override
     public Integer call() {
-//        result = pg.generate();
-//        System.out.println("i am from 2nd thread Prime :" + result);
-//        queue.add(result);
-//        if (Thread.currentThread().isInterrupted()) {
-//            // Cannot use InterruptedException since it's checked
-//            throw new RuntimeException();
-//        }
-//        return result;
+
         while (result <limit){
             result = pg.generate();
             queue.add(result);

@@ -16,17 +16,8 @@ public class FibonacciProducer implements Callable<Integer> {
         this.limit = limit;
         
     }
-
+    @Override
     public Integer call() {
-//        result = fbg.generate();
-//        queue.add(result);
-//        System.out.println("i am from 1st thread Fibonacci :" + result);
-//        if (Thread.currentThread().isInterrupted()) {
-//            // Cannot use InterruptedException since it's checked
-//            throw new RuntimeException();
-//        }
-//        return result;
-        
         while (result <limit){
             result = fbg.generate();
             queue.add(result);
